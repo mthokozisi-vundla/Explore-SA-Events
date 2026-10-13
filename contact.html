@@ -1,0 +1,65 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Contact Us | Explore SA Events</title>
+    <link rel="stylesheet" href="css/styles.css" />
+  </head>
+  <body id="contact-page">
+    <header>
+      <div class="bar">
+        <a class="brand" href="index.html">Explore SA Events</a>
+        <span id="datetime"></span>
+      </div>
+      <nav aria-label="Main menu">
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="about.html">About Us</a></li>
+          <li><a href="events.html">Events</a></li>
+          <li><a href="gallery.html">Gallery</a></li>
+          <li><a href="contact.html" class="active">Contact Us</a></li>
+        </ul>
+      </nav>
+    </header>
+    <main>
+      <section class="wrap">
+        <h1>Contact us</h1>
+        <form id="contactForm" novalidate>
+          <label for="name">Name</label>
+          <input type="text" id="name" name="name" /><span
+            class="error"
+            id="nameErr"
+          ></span>
+          <label for="email">Email</label>
+          <input type="email" id="email" name="email" /><span
+            class="error"
+            id="emailErr"
+          ></span>
+          <label for="subject">Subject</label>
+          <input type="text" id="subject" name="subject" /><span
+            class="error"
+            id="subjectErr"
+          ></span>
+          <label for="message">Message</label>
+          <textarea id="message" name="message" rows="5"></textarea
+          ><span class="error" id="messageErr"></span>
+          <button type="submit" class="btn">Send message</button>
+        </form>
+        <h2>Find us</h2>
+        <div class="video">
+          <iframe
+            src="https://www.google.com/maps?q=Johannesburg+South+Africa&output=embed"
+            title="Map of our office"
+            loading="lazy"
+          ></iframe>
+        </div>
+      </section>
+    </main>
+    <footer>
+      <p>
+        &copy; 2026 Explore SA Events. All rights reserved
+      </p>
+    </footer>
+  </body>
+</html>
