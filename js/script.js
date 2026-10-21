@@ -160,3 +160,75 @@ updateDateTime();
 
 // Update the time every second
 setInterval(updateDateTime, 1000);
+
+// 5. DARK MODE: LIGHT / DARK MODE SWITCH
+
+// Read the saved theme from local storage (light mode by default)
+function getSavedTheme() {
+  try {
+    return localStorage.getItem("theme");
+  } catch (error) {
+    return null;
+  }
+}
+
+// Save the theme so it stays on the next page
+function saveTheme(theme) {
+  try {
+    localStorage.setItem("theme", theme);
+  } catch (error) {
+    // Local storage may be blocked - the switch still works on this page
+  }
+}
+
+// Show the theme on the page and update the button text
+function applyTheme(theme, button) {
+  var isDark = theme === "dark";
+
+  // The body.dark class is already styled in the CSS file
+  document.body.classList.toggle("dark", isDark);
+
+  if (button != null) {
+    button.textContent = isDark ? "Light mode" : "Dark mode";
+    button.setAttribute(
+      "aria-label",
+      isDark ? "Switch to light mode" : "Switch to dark mode"
+    );
+  }
+}
+
+// Create the switch button next to the time in the navigation bar
+function createThemeSwitch() {
+  var time = document.getElementById("navTime");
+
+  if (time == null || time.parentNode == null) {
+    return;
+  }
+
+  // Group the time and the button together on the right of the nav bar
+  var group = document.createElement("span");
+  group.className = "nav-right";
+  time.parentNode.insertBefore(group, time);
+  group.appendChild(time);
+
+  var button = document.createElement("button");
+  button.type = "button";
+  button.className = "dark-toggle";
+  group.appendChild(button);
+
+  // Start with the saved theme (light mode if nothing was saved yet)
+  var theme = getSavedTheme() === "dark" ? "dark" : "light";
+  applyTheme(theme, button);
+
+  // Switch between light and dark mode when the button is clicked
+  button.addEventListener("click", function () {
+    theme = theme === "dark" ? "light" : "dark";
+    applyTheme(theme, button);
+    saveTheme(theme);
+  });
+}
+
+// Add the switch to every page that has a navigation bar
+if (document.getElementById("navDate") != null) {
+  createThemeSwitch();
+}

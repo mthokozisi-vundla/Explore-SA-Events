@@ -49,28 +49,28 @@
           <tbody>
             <tr>
               <td>Cape Town Jazz Festival</td>
-              <td>12 June 2025</td>
+              <td>27 March 2027</td>
               <td>Cape Town</td>
               <td>R500</td>
             </tr>
 
             <tr>
               <td>Durban Beach Marathon</td>
-              <td>20 July 2025</td>
+              <td>14 February 2027</td>
               <td>Durban</td>
               <td>R250</td>
             </tr>
 
             <tr>
               <td>Kruger Wildlife Tour</td>
-              <td>5 August 2025</td>
+              <td>5 December 2026</td>
               <td>Mpumalanga</td>
               <td>R1200</td>
             </tr>
 
             <tr>
               <td>Johannesburg Food Festival</td>
-              <td>15 September 2025</td>
+              <td>17 April 2027</td>
               <td>Johannesburg</td>
               <td>R350</td>
             </tr>
@@ -82,18 +82,27 @@
         <h2>Featured Attractions</h2>
 
         <div class="gallery">
-          <img src="imagess/images (3).jpg" />
+          <img
+          src="imagess/images (3).jpg"
+          alt="Jazz saxophonist performing on stage"
+        />
 
-          <img src="imagess/marathon.jpg" />
+          <img
+          src="imagess/marathon.jpg"
+          alt="Long-distance runners racing with Table Mountain in the background"
+        />
 
-          <img src="imagess/krugerlepord.jpeg" />
+          <img
+          src="imagess/krugerlepord.jpeg"
+          alt="Leopard resting on a tree branch in Kruger National Park"
+        />
         </div>
       </section>
 
       <!-- Dynamic Event List -->
 
       <section>
-        <button id="infoBtn" onclick="toggleInfo()">Show Ticket Info</button>
+        <button id="infoBtn" class="btn" onclick="toggleInfo()">Show Ticket Info</button>
 
         <div id="extraInfo" style="display: none">
           <p>
@@ -112,7 +121,7 @@
         <label>Number of Tickets:</label>
         <input type="number" id="tickets" />
 
-        <button class="calculate-btn" onclick="calculateCost()">
+        <button class="btn" onclick="calculateCost()">
           Calculate Total
         </button>
 
@@ -121,7 +130,7 @@
     </main>
 
     <footer>
-      <p>&copy; 2026 Explore SA Events. All Rights Reserved.</p>
+      <p>&copy; 2026 Explore SA Events. All rights reserved.</p>
     </footer>
 
     <script src="js/script.js"></script>
