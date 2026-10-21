@@ -124,22 +124,29 @@ if (contactForm) {
   });
 }
 
-// 4. CONTACT PAGE: SHOW DATE AND TIME
+// NAV BAR: SHOW DATE AND TIME
 
-var datetime = document.getElementById("datetime");
+function updateDateTime() {
+  // Get the current date and time
+  var now = new Date();
 
-if (datetime) {
-  function updateClock() {
-    // Get the current date and time
-    var now = new Date();
+  // Get the date and time elements from HTML
+  var date = document.getElementById("navDate");
+  var time = document.getElementById("navTime");
 
-    // Display the date and time
-    datetime.textContent = now.toLocaleString();
+  // Display the date
+  if (date) {
+    date.textContent = now.toLocaleDateString("en-ZA");
   }
 
-  // Show the date and time immediately
-  updateClock();
-
-  // Update the clock every second
-  setInterval(updateClock, 1000);
+  // Display the time
+  if (time) {
+    time.textContent = now.toLocaleTimeString("en-ZA");
+  }
 }
+
+// Display the date and time immediately
+updateDateTime();
+
+// Update the date and time every second
+setInterval(updateDateTime, 1000);
