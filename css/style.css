@@ -343,3 +343,36 @@ tbody tr:hover {
     align-items: center;
   }
 }
+
+/* NAVIGATION BAR */
+
+nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 20px;
+}
+
+/* DATE */
+
+#navDate {
+  font-weight: bold;
+  color: #006400;
+}
+
+/* TIME */
+
+#navTime {
+  font-weight: bold;
+  color: #006400;
+}
+
+/* FOR SMALL SCREENS */
+
+@media (max-width: 700px) {
+  nav {
+    flex-direction: column;
+    text-align: center;
+    gap: 6px;
+  }
+}
