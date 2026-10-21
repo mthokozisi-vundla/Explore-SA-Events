@@ -311,7 +311,7 @@ tbody tr:hover {
 .panel {
   background: var(--panel);
   color: var(--panel-text);
-  border-radius: 10px;
+  border-radius: 20px;
   padding: 1.5rem;
   max-width: 520px;
   margin: 0 auto;
@@ -344,82 +344,107 @@ tbody tr:hover {
   }
 }
 /*-----images-----*/
-.gallery-grid{
-  display:flex;
+.gallery-grid {
+  display: flex;
   justify-content: center;
-  padding:20px;
+  padding: 20px;
 }
 /*-----sliding images----*/
-.card{
-  display:flex;
-  overflow-x:auto;
-  scroll-snap-type:x mandatory;
-  gap:20px;
-  width:850px;
+.card {
+  display: flex;
+  overflow-x: auto;
+  scroll-snap-type: x mandatory;
+  gap: 20px;
+  width: 850px;
   max-width: 90vw;
-  background: rgba(0,0,0,0.25);
-  backdrop-filter:blur(8px);
-  border-radius:14px;
-  border:1px solid rgba(255,255,255,0.15);
-  box-shadow:0 4px 8px rgba(0,0,0,0.1);
+  background: rgba(0, 0, 0, 0.25);
+  backdrop-filter: blur(8px);
+  border-radius: 14px;
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
   padding: 15px;
-  
 }
 /*----images----*/
-.card img{
-  flex:0 0 280px;
-  height:270px;
+.card img {
+  flex: 0 0 280px;
+  height: 270px;
   object-fit: cover;
   scroll-snap-align: start;
-  border-radius:8px;
-  display:block;
-  box-shadow:0 4px 12px rgba(0,0,0,0.4);
-  
+  border-radius: 8px;
+  display: block;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.4);
 }
 
 /*----heading----*/
-h5{
+h5 {
   color: var(--yellow);
   text-align: center;
   font-size: 25px;
-  margin:0px;
+  margin: 0px;
 }
 /*----heading----*/
-h4{
+h4 {
   text-align: center;
-  font-size:40px;
-  margin:10px
+  font-size: 40px;
+  margin: 10px;
 }
 
 /* NAVIGATION BAR */
 
 nav {
+  background-color: var(--panel);
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 10px 20px;
+  padding: 15px 20px;
+  gap: 15px;
 }
 
-/* DATE */
+/* NAVIGATION LINKS */
 
-#navDate {
-  font-weight: bold;
-  color: #006400;
+nav ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
 }
 
-/* TIME */
+/* DATE AND TIME */
 
+#navDate,
 #navTime {
+  color: var(--panel-text);
   font-weight: bold;
-  color: #006400;
+  font-size: 14px;
+  white-space: nowrap;
 }
 
-/* FOR SMALL SCREENS */
+/* SMALL SCREENS */
 
 @media (max-width: 700px) {
   nav {
     flex-direction: column;
-    text-align: center;
-    gap: 6px;
+    gap: 10px;
   }
+
+  nav ul {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  #navDate,
+  #navTime {
+    text-align: center;
+  }
+}
+
+.calculate-btn {
+  border-radius: 10px;
+  padding: 12px 20px;
+  background-color: #080808;
+  color: white;
+  border: none;
+  cursor: pointer;
 }

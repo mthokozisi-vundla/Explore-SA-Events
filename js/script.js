@@ -130,23 +130,33 @@ function updateDateTime() {
   // Get the current date and time
   var now = new Date();
 
-  // Get the date and time elements from HTML
+  // Find the date and time in the HTML
   var date = document.getElementById("navDate");
   var time = document.getElementById("navTime");
 
   // Display the date
-  if (date) {
-    date.textContent = now.toLocaleDateString("en-ZA");
+  if (date != null) {
+    date.textContent = now.toLocaleDateString("en-ZA", {
+      weekday: "long",
+      day: "numeric",
+      month: "long",
+      year: "numeric",
+    });
   }
 
   // Display the time
-  if (time) {
-    time.textContent = now.toLocaleTimeString("en-ZA");
+  if (time != null) {
+    time.textContent = now.toLocaleTimeString("en-ZA", {
+      hour: "2-digit",
+      minute: "2-digit",
+      second: "2-digit",
+      hour12: false,
+    });
   }
 }
 
-// Display the date and time immediately
+// Show the date and time immediately
 updateDateTime();
 
-// Update the date and time every second
+// Update the time every second
 setInterval(updateDateTime, 1000);
