@@ -343,3 +343,50 @@ tbody tr:hover {
     align-items: center;
   }
 }
+/*-----images-----*/
+.gallery-grid{
+  display:flex;
+  justify-content: center;
+  padding:20px;
+}
+/*-----sliding images----*/
+.card{
+  display:flex;
+  overflow-x:auto;
+  scroll-snap-type:x mandatory;
+  gap:20px;
+  width:850px;
+  max-width: 90vw;
+  background: rgba(0,0,0,0.25);
+  backdrop-filter:blur(8px);
+  border-radius:14px;
+  border:1px solid rgba(255,255,255,0.15);
+  box-shadow:0 4px 8px rgba(0,0,0,0.1);
+  padding: 15px;
+  
+}
+/*----images----*/
+.card img{
+  flex:0 0 280px;
+  height:270px;
+  object-fit: cover;
+  scroll-snap-align: start;
+  border-radius:8px;
+  display:block;
+  box-shadow:0 4px 12px rgba(0,0,0,0.4);
+  
+}
+
+/*----heading----*/
+h5{
+  color: var(--yellow);
+  text-align: center;
+  font-size: 25px;
+  margin:0px;
+}
+/*----heading----*/
+h4{
+  text-align: center;
+  font-size:40px;
+  margin:10px
+}
